@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>启动游戏</title>
+    <style>
+        body {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        #gameName {
+            display: none;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" id="inputField" placeholder="输入游戏名字">
+        <button id="startButton">启动</button>
+        <div id="gameName">原神</div>
+    </div>
+
+    <script>
+        const inputField = document.getElementById("inputField");
+        const startButton = document.getElementById("startButton");
+        const gameName = document.getElementById("gameName");
+
+        startButton.addEventListener("click", function () {
+            inputField.style.display = "none";
+            startButton.style.display = "none";
+            gameName.style.display = "block";
+        });
+    </script>
+</body>
+</html>
