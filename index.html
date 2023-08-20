@@ -17,16 +17,19 @@
         input[type="text"] {
             padding: 10px;
             font-size: 16px;
+            transition: opacity 1s;
         }
 
         button {
             padding: 10px 20px;
             font-size: 16px;
+            transition: opacity 1s;
         }
 
         #gameName {
             display: none;
             font-size: 24px;
+            transition: opacity 2s;
         }
     </style>
 </head>
@@ -43,9 +46,16 @@
         const gameName = document.getElementById("gameName");
 
         startButton.addEventListener("click", function () {
-            inputField.style.display = "none";
-            startButton.style.display = "none";
-            gameName.style.display = "block";
+            inputField.style.opacity = "0";
+            startButton.style.opacity = "0";
+            setTimeout(function () {
+                inputField.style.display = "none";
+                startButton.style.display = "none";
+                gameName.style.display = "block";
+                setTimeout(function () {
+                    gameName.style.opacity = "1";
+                }, 100);
+            }, 1000);
         });
     </script>
 </body>
